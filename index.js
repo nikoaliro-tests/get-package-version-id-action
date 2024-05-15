@@ -100,7 +100,7 @@ function packagesCursors(response) {
 async function fetchIds(token, version) {
   const octokit = github.getOctokit(token)
   const {owner, repo} = github.context.repo
-  core.info(`Fetch '${version}' for owner '${owner}' and repo '${repo}'`)
+  core.debug(`Fetch '${version}' for owner '${owner}' and repo '${repo}'`)
   // the matcher for the version string
   const matcher = new RegExp('^' + version + '$')
 
