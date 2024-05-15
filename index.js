@@ -108,6 +108,7 @@ async function fetchIds(token, version) {
   let pkgCursors = [null];
   // we collect the final results here
   let versions = [];
+  core.debug(`len '${pkgCursors.length}'`)
   while (pkgCursors.length > 0) {
     core.debug(`while loop`);
     for (const pc of pkgCursors) {
