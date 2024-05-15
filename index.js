@@ -111,6 +111,7 @@ async function fetchIds(token, version) {
   while (pkgCursors.length > 0) {
     for (const pc of pkgCursors) {
       let response = await query(octokit, repo, owner, pc, null);
+      core.debug(`Response 1 '${response}'`);
       pkgCursors = packagesCursors(response);
       versions = versions.concat(getIds(response, matcher));
       for (const c of versionCursors(response)) {
